@@ -6,26 +6,32 @@ class MasterContainer extends React.Component {
   constructor(){
     super();
     this.state = {
-      nextUserAction: ""
+      nextUserAction: "",
+      clearForm: "",
     }
   }
 
   submitUserAction = (event) => {
     event.preventDefault()
-    let userInput = document.getElementById("user-input")
-    userInput.reset()
-    console.log(event.target.value);
+    console.log("b4", this.state.clearForm);
+    this.setState({
+      clearForm: ""
+    }, () => {console.log("next action", this.state.nextUserAction})
   }
 
   getUserAction = (event) => {
     console.log(event.target.value);
+    this.setState({
+      nextUserAction: event.target.value,
+      clearForm: event.target.value
+    })
   }
 
   render(){
     return(
       <div id="master-container">
         <Display />
-        <SubmissionBox submitUserAction={this.submitUserAction} getUserAction={this.getUserAction}/>
+        <SubmissionBox state={this.state} submitUserAction={this.submitUserAction} getUserAction={this.getUserAction}/>
       </div>
     )
   }
