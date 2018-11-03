@@ -8,12 +8,9 @@ class SubmissionBox extends React.Component {
 
   render(){
     return(
-      <div>
-      <form onSubmit={this.getUserAction}>
-        <input id="user-input" type="text" name="user-action"></input>
+      <form onSubmit={this.props.submitUserAction} onChange={this.props.getUserAction}>
+        <input id="user-input" type="text" name="user-action" autoFocus="autofocus"></input>
       </form>
-
-      </div>
     )
   }
 }
