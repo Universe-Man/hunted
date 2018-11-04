@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/Display.css';
 
 class Display extends React.Component {
   constructor(){
@@ -8,9 +9,7 @@ class Display extends React.Component {
 
   render(){
     return(
-      <div>
-        Display
-      </div>
+      <textarea id="text-display" value={this.props.textDisplayValue} />
     )
   }
 }

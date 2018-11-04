@@ -1,0 +1,10 @@
+#text-display {
+  font-size: 36px;
+  width: 1000px;
+  height: 400px;
+  border-width: thick;
+  border-radius: 10px;
+  padding: 30px;
+  border-color: green;
+  margin: 30px;
+}
