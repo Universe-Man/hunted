@@ -7,23 +7,17 @@ class MasterContainer extends React.Component {
     super();
     this.state = {
       nextUserAction: "",
-      clearForm: "",
     }
   }
 
   submitUserAction = (event) => {
     event.preventDefault()
-    console.log("b4", this.state.clearForm);
-    this.setState({
-      clearForm: ""
-    }, () => {console.log("next action", this.state.nextUserAction})
+    console.log(this.state.nextUserAction);
   }
 
   getUserAction = (event) => {
-    console.log(event.target.value);
     this.setState({
       nextUserAction: event.target.value,
-      clearForm: event.target.value
     })
   }
 

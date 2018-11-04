@@ -1,4 +1,5 @@
 import React from 'react';
+import '../assets/SubmissionBox.css';
 
 class SubmissionBox extends React.Component {
   constructor(){
@@ -9,7 +10,7 @@ class SubmissionBox extends React.Component {
   render(){
     return(
       <form onSubmit={this.props.submitUserAction} onChange={this.props.getUserAction}>
-        <input id="user-input" type="text" name="user-action" autoFocus="autofocus" value={this.props.state.clearForm}></input>
+        <input id="user-input" type="text" name="user-action" autoFocus="autofocus" defaultValue=""></input>
       </form>
     )
   }
