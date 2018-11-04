@@ -12,7 +12,9 @@ class MasterContainer extends React.Component {
 
   submitUserAction = (event) => {
     event.preventDefault()
-    console.log(this.state.nextUserAction);
+    let userInput = document.getElementById("user-input")
+    userInput.value = ""
+    console.log("this", this.state.nextUserAction);
   }
 
   getUserAction = (event) => {
