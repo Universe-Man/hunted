@@ -10,6 +10,7 @@ class MasterContainer extends React.Component {
       nextUserAction: "",
       textDisplayValue: "You awake on the floor of a room. You are alone.",
       roomNumber: 0,
+      notValid: "Not a valid response."
     }
   }
 // INPUT CLEARS BUT IF YOU PRESS ENTER AGAIN IT SUBMITS THE LAST SUBMISSION!! (ADD IF/ELSE TO MAKE SURE EMPTY INPUT'S SAY "YOU NEED TO ENTER A THING")
@@ -32,10 +33,16 @@ class MasterContainer extends React.Component {
   // FIRST ROOM
     if (this.state.roomNumber === 0) {
       switch (this.state.nextUserAction) {
-        case "":
-
+        case "look":
+        case "look around":
+        case "look around room":
+        case "look around the room":
+        case "look at room":
+        case "look at the room":
+          // what room looks like?
           break;
         default:
+          // not valid
 
       }
     }
