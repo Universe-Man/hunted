@@ -8,9 +8,10 @@ class MasterContainer extends React.Component {
     super();
     this.state = {
       nextUserAction: "",
-      textDisplayValue: "You awake on the floor of a room. You are alone.",
+      textDisplayValue: "",
+      currentTextDisplayed: "You awake on the floor of a room. You are alone.",
       roomNumber: 0,
-      notValid: "Not a valid response."
+      notValid: "Not a valid response.",
     }
   }
 // INPUT CLEARS BUT IF YOU PRESS ENTER AGAIN IT SUBMITS THE LAST SUBMISSION!! (ADD IF/ELSE TO MAKE SURE EMPTY INPUT'S SAY "YOU NEED TO ENTER A THING")
@@ -28,10 +29,17 @@ class MasterContainer extends React.Component {
       nextUserAction: userActionLowerCase,
     })
   }
-
+/////////////WHERE I STOPPED!! TRYING TO MAKE DEFAULT FOR INVALID RESPONSE (RETURNS TO PREVIOUS AFTER 3 SECONDS) AND CHANGING TEXT ON VALID RESPONSE.
   respondToUser = () => {
-  // FIRST ROOM
+  // INTRO
     if (this.state.roomNumber === 0) {
+      this.setState({
+        textDisplayValue: this.state.currentTextDisplayed,
+        roomNumber: 1,
+      })
+    }
+  // FIRST ROOM
+    if (this.state.roomNumber === 1) {
       switch (this.state.nextUserAction) {
         case "look":
         case "look around":
@@ -43,7 +51,12 @@ class MasterContainer extends React.Component {
           break;
         default:
           // not valid
-
+          this.setState({
+            textDisplayValue: this.state.notValid
+          })
+          setTimeout(this.setState({
+            textDisplayValue: this.state.currentTextDisplayed
+          }), 3000);
       }
     }
 
