@@ -7,4 +7,6 @@
   padding: 30px;
   border-color: green;
   margin: 30px;
+  text-align: center;
+  /* vertical-align: middle; */
 }

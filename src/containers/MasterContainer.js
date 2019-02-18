@@ -8,7 +8,7 @@ class MasterContainer extends React.Component {
     super();
     this.state = {
       nextUserAction: "",
-      textDisplayValue: "",
+      textDisplayValue: "You awake on the floor of a room. You are alone.",
     }
   }
 // INPUT CLEARS BUT IF YOU PRESS ENTER AGAIN IT SUBMITS THE LAST SUBMISSION!! (ADD IF/ELSE TO MAKE SURE EMPTY INPUT'S SAY "YOU NEED TO ENTER A THING")
