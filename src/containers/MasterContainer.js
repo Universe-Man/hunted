@@ -9,6 +9,7 @@ class MasterContainer extends React.Component {
     this.state = {
       nextUserAction: "",
       textDisplayValue: "You awake on the floor of a room. You are alone.",
+      roomNumber: 0,
     }
   }
 // INPUT CLEARS BUT IF YOU PRESS ENTER AGAIN IT SUBMITS THE LAST SUBMISSION!! (ADD IF/ELSE TO MAKE SURE EMPTY INPUT'S SAY "YOU NEED TO ENTER A THING")
@@ -17,6 +18,7 @@ class MasterContainer extends React.Component {
     let userInput = document.getElementById("user-input")
     userInput.value = ""
     console.log("this", this.state.nextUserAction);
+    this.respondToUser();
   }
 
   getUserAction = (event) => {
@@ -24,6 +26,14 @@ class MasterContainer extends React.Component {
       nextUserAction: event.target.value,
     })
   }
+
+  respondToUser = () => {
+    console.log('wejncsw',this.state.nextUserAction);
+  }
+
+
+
+
 
   render(){
     return(
