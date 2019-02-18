@@ -22,13 +22,24 @@ class MasterContainer extends React.Component {
   }
 
   getUserAction = (event) => {
+    let userActionLowerCase = event.target.value.toLowerCase();
     this.setState({
-      nextUserAction: event.target.value,
+      nextUserAction: userActionLowerCase,
     })
   }
 
   respondToUser = () => {
-    console.log('wejncsw',this.state.nextUserAction);
+  // FIRST ROOM
+    if (this.state.roomNumber === 0) {
+      switch (this.state.nextUserAction) {
+        case "":
+
+          break;
+        default:
+
+      }
+    }
+
   }
 
 
